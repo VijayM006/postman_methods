@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="all" style="border-collapse: collapse;">
+        <tr>
+            <th colspan="4">Student Details</th>
+            <th colspan="5">Marks</th>
+        </tr>
+        <tr>
+            <th>SI No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Roll No</th>
+            <th>Tamil</th>
+            <th>English</th>
+            <th>Maths</th>
+            <th>Science</th>
+            <th>S.Science</th>
+        </tr>
+        {%for i in value %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{i.Name}}</td>
+            <td>{{i.Age}}</td>
+            <td>{{i.RollNo}}</td>
+            {%for j in i.Marks %}
+            <td>{{j}}</td>
+            {%endfor%}
+        </tr>
+        {%endfor%}
+    </table>
+  {{value}}  
+</body>
+</html>
